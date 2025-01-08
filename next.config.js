@@ -4,7 +4,13 @@
  */
 import "./src/env.js";
 
-/** @type {import("next").NextConfig} */
-const config = {};
+import createMDX from "@next/mdx";
 
-export default config;
+/** @type {import("next").NextConfig} */
+const config = {
+  pageExtensions: ["tsx", "ts", "jsx", "js", "mdx", "md"],
+};
+
+const withMDX = createMDX({});
+
+export default withMDX(config);
